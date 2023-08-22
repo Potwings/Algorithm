@@ -20,45 +20,68 @@ import java.util.*;
 /**
  * 개선 사항
  * 이차원 배열을 사용하였으나 시간 초과로 실패
- *
- * 다른 사람들은 비교연산자를 사용하여 해결했는데 비교 연산자에 대해 추가 학습할 것
+ * <p>
+ * 다른 사람들은 Comparator를 사용하여 해결했는데 비교 연산자에 대해 추가 학습할 것
  */
 public class Q11650 {
 
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        Map<Integer, List<Integer>> pointMap = new HashMap<>();
-        StringTokenizer st = null;
-        for (int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
-            int x = Integer.parseInt(st.nextToken());
-            int y = Integer.parseInt(st.nextToken());
-            if (pointMap.containsKey(x)) {
-                // 이미 x가 Map에 등록되어 있을 경우 리스트에 y만 추가해준다.
-                pointMap.get(x).add(y);
-                continue;
+        public static void main(String[] args) throws Exception {
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            int N = Integer.parseInt(br.readLine());
+            int[][] pointArr = new int[N][2];
+
+            StringTokenizer st = null;
+            for (int i = 0; i < N; i++) {
+                st = new StringTokenizer(br.readLine());
+                pointArr[i][0] = Integer.parseInt(st.nextToken());
+                pointArr[i][1] = Integer.parseInt(st.nextToken());
             }
 
-            List<Integer> yList = new ArrayList<>();
-            yList.add(y);
-            pointMap.put(x, yList);
-        }
+            // 첫번째 값이 동일한 경우 두번쨰 값과 비교하여 정렬
+            Arrays.sort(pointArr, (o1, o2) -> o1[0] == o2[0] ? o1[1] - o2[1] : o1[0] - o2[0]);
 
-        // x좌표 기준으로 정렬
-        Integer[] keySet = pointMap.keySet().toArray(new Integer[0]);
-        Arrays.sort(keySet);
-
-        StringBuilder sb = new StringBuilder();
-        for (Integer x : keySet) {
-            List<Integer> yList = pointMap.get(x);
-            // x좌표값이 동일할 경우 y좌표 기준으로 정렬
-            Collections.sort(yList);
-            for (int y : yList) {
-                sb.append(x).append(" ").append(y).append("\n");
+            StringBuffer sb = new StringBuffer();
+            for (int[] point : pointArr) {
+                sb.append(point[0]).append(" ").append(point[1]).append("\n");
             }
-        }
 
-        System.out.println(sb.toString());
-    }
+            System.out.println(sb.toString());
+        }
+//    public static void main(String[] args) throws Exception {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int N = Integer.parseInt(br.readLine());
+//        Map<Integer, List<Integer>> pointMap = new HashMap<>();
+//        StringTokenizer st = null;
+//        for (int i = 0; i < N; i++) {
+//            st = new StringTokenizer(br.readLine());
+//            int x = Integer.parseInt(st.nextToken());
+//            int y = Integer.parseInt(st.nextToken());
+//            if (pointMap.containsKey(x)) {
+//                // 이미 x가 Map에 등록되어 있을 경우 리스트에 y만 추가해준다.
+//                pointMap.get(x).add(y);
+//                continue;
+//            }
+//
+//            List<Integer> yList = new ArrayList<>();
+//            yList.add(y);
+//            pointMap.put(x, yList);
+//        }
+//
+//        // x좌표 기준으로 정렬
+//        Integer[] keySet = pointMap.keySet().toArray(new Integer[0]);
+//        Arrays.sort(keySet);
+//
+//        StringBuilder sb = new StringBuilder();
+//        for (Integer x : keySet) {
+//            List<Integer> yList = pointMap.get(x);
+//            // x좌표값이 동일할 경우 y좌표 기준으로 정렬
+//            Collections.sort(yList);
+//            for (int y : yList) {
+//                sb.append(x).append(" ").append(y).append("\n");
+//            }
+//        }
+//
+//        System.out.println(sb.toString());
+//    }
 }
