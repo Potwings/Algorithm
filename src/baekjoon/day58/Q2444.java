@@ -10,7 +10,7 @@ public class Q2444 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < N; i++) {
             sb.append(printStar(N, i));
         }
