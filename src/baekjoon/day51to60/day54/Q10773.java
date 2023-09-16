@@ -1,10 +1,7 @@
-package baekjoon.day54;
+package baekjoon.day51to60.day54;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Stack;
 
 /**

@@ -1,8 +1,7 @@
-package baekjoon.day52;
+package baekjoon.day51to60.day52;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 /**
  * 문제
