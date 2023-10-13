@@ -8,16 +8,18 @@ public class Q2018 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        int result = 1;
-        for (int i = 1; i < N; i++) {
-            long sum = 0;
-            for (int j = i; j < N; j++) {
-                sum += j;
+        int result = 1; // N만 포함되는 경우
+        long sum = 1;
+        int start = 1;
+        int end = 1;
+        while (end < N) {
+            if (sum > N) {
+                sum -= start++;
+            } else {
                 if (sum == N) {
                     result++;
-                } else if (sum > N) {
-                    break;
                 }
+                sum += ++end;
             }
         }
         System.out.println(result);
