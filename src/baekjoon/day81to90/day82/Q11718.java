@@ -1,4 +1,4 @@
-package baekjoon.day82;
+package baekjoon.day81to90.day82;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
