@@ -1,4 +1,4 @@
-package baekjoon.day138;
+package baekjoon.day131to140.day138;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,7 +16,6 @@ public class Q1012 {
         int[] dx = {1, -1, 0, 0};
         int[] dy = {0, 0, 1, -1};
         boolean[][] fields;
-        boolean[][] bugs;
         StringTokenizer st;
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < T; i++) {
