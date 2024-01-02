@@ -1,4 +1,4 @@
-package baekjoon.day164;
+package baekjoon.day161to170.day164;
 
 import java.io.*;
 import java.util.*;
