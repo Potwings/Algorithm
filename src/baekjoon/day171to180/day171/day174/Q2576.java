@@ -1,4 +1,4 @@
-package baekjoon.day174;
+package baekjoon.day171to180.day171.day174;
 
 import java.io.*;
 import java.io.BufferedWriter;
