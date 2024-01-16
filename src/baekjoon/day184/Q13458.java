@@ -26,7 +26,8 @@ public class Q13458 {
       result += 1; // 총 감독관 1명은 무조건 있어야 한다.
       int candidate = Integer.parseInt(st.nextToken());
       if (candidate > B) {
-        result += (long)Math.ceil((candidate - B) / C); // 남은 응시자 수를 부 감독관이 감시할 수 있는 수로 나누어 더해준다 (나누어 떨어지지 않을 경우 올림처리).
+        // 남은 응시자 수를 부 감독관이 감시할 수 있는 수로 나누어 더해준다 (나누어 떨어지지 않을 경우 올림처리).
+        result += (long) Math.ceil((candidate - B) / C);
       }
     }
 
