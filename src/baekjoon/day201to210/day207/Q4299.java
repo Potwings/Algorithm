@@ -1,4 +1,4 @@
-package baekjoon.day207;
+package baekjoon.day201to210.day207;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
